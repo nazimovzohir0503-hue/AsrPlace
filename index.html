@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ASR Plaza</title>
+<meta name="description" content="ASR Plaza">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ASR Plaza">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/menu.css">
+<link rel="stylesheet" href="css/nav.css">
+<link rel="stylesheet" href="css/hero.css">
+<script type="application/ld+json" id="ld"></script>
+</head>
+<body>
+<header class="top">
+  <a class="logo" href="#top"><img src="images/logo.png" alt="" width="46" height="46"><span>Asr Plaza</span></a>
+  <nav class="links" id="mnav">
+    <a href="#about" data-i18n="nav_about"></a>
+    <a href="#menu" data-i18n="nav_menu"></a>
+    <a href="#visit" data-i18n="nav_visit"></a>
+    <a class="nav-book btn btn-gold" href="#book" data-i18n="book"></a>
+  </nav>
+  <div class="lang" role="group" aria-label="Language">
+    <button data-lang="uz">UZ</button><button data-lang="ru">RU</button><button data-lang="en">EN</button>
+  </div>
+  <a class="btn btn-red" href="#book" data-i18n="book"></a>
+  <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mnav"><span></span></button>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+  <source src="images/hero/hero.mp4" type="video/mp4">
+</video>
+    <div class="hero-text">
+      <span class="badge" id="openBadge"></span>
+      <h1 data-i18n="hero_t"></h1>
+      <p data-i18n="hero_p"></p>
+      <div class="cta">
+        <a class="btn btn-gold" href="#menu" data-i18n="see_menu"></a>
+        <a class="btn btn-line" href="#book" data-i18n="book"></a>
+      </div>
+    </div>
+  </section>
+  <section class="cuisines">
+    <div class="arches" id="arches"></div>
+  </section>
+  <section class="sec" id="about">
+    <h2 data-i18n="about_t"></h2>
+    <p class="lead" data-i18n="about_p"></p>
+    <ul class="facts">
+      <li><b data-i18n="fa1_t"></b><span data-i18n="fa1_p"></span></li>
+      <li><b data-i18n="fa2_t"></b><span data-i18n="fa2_p"></span></li>
+      <li><b data-i18n="fa3_t"></b><span data-i18n="fa3_p"></span></li>
+    </ul>
+  </section>
+
+  <section class="sec menu" id="menu">
+    <h2 data-i18n="menu_t"></h2>
+    <div class="tabs" id="tabs" role="tablist"></div>
+    <ul class="dishes" id="dishes"></ul>
+  </section>
+
+  <section class="sec visit" id="visit">
+    <div class="info">
+      <h2 data-i18n="visit_t"></h2>
+      <dl id="info"></dl>
+    </div>
+    <iframe id="map" title="Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+
+  <section class="sec book" id="book">
+    <h2 data-i18n="book_t"></h2>
+    <form id="form" novalidate>
+      <label><span data-i18n="f_name"></span><input name="name" required autocomplete="name"></label>
+      <label><span data-i18n="f_phone"></span><input name="phone" type="tel" required autocomplete="tel" placeholder="+998"></label>
+      <label><span data-i18n="f_date"></span><input name="date" type="datetime-local" required></label>
+      <label><span data-i18n="f_guests"></span><input name="guests" type="number" min="1" max="100" value="2" required></label>
+      <button class="btn btn-red" type="submit" data-i18n="f_send"></button>
+      <p class="note" id="formNote" role="status"></p>
+    </form>
+  </section>
+</main>
+
+<footer class="foot">
+  <span>© <span id="year"></span> ASR Plaza</span>
+  <span id="footContact"></span>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/nav.js"></script>
+</body>
+</html>
