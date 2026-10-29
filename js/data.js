@@ -7,10 +7,9 @@
 window.SITE = {
   name: "ASR Plaza",
   phone: "+998990257071",            // TODO: haqiqiy raqam (yagona manba)
-  whatsapp: "998990257071",          // bron so'rovlari shu raqamga boradi (+ belgisiz)
   email: "@asrplaza.uz",             // TODO
   instagram: "https://www.instagram.com/asrplaza?psln=MXFoaXphcmJ0bGZxcQ==",   // TODO
-  telegram: "https://t.me/asrplaza",             // TODO
+  telegram: "https://t.me/nazimovvt",             // TODO
   open: 11, close: 22,               // ish vaqti (soat), har kuni
   mapQuery: "ASR Plaza, Jizzax shahri, Uzbekistan",  // TODO: aniq manzil yoki koordinata
   address: {
@@ -39,8 +38,8 @@ window.I18N = {
     visit_t: "Bizga keling", lbl_addr: "Manzil", lbl_hours: "Ish vaqti", lbl_phone: "Telefon", daily: "Har kuni",
     book_t: "Stol band qilish",
     f_name: "Ismingiz", f_phone: "Telefon raqamingiz", f_date: "Sana va vaqt", f_guests: "Mehmonlar soni",
-    f_send: "WhatsApp orqali yuborish",
-    f_err: "Iltimos, barcha maydonlarni to'ldiring.", f_ok: "WhatsApp ochildi. Xabarni yuboring, biz tasdiqlaymiz.",
+    f_send: "Telegram orqali yuborish",          // uz
+    f_err: "Iltimos, barcha maydonlarni to'ldiring.", f_ok: "Telegram ochildi. Xabarni yuboring, biz tasdiqlaymiz.",
     desc: "Asr Plaza: Jizzaxdagi premium restoran. Steyk, shashlik, assorti, turk va milliy taomlar."
   },
   ru: {
@@ -60,8 +59,8 @@ window.I18N = {
     visit_t: "Как нас найти", lbl_addr: "Адрес", lbl_hours: "Время работы", lbl_phone: "Телефон", daily: "Ежедневно",
     book_t: "Бронирование стола",
     f_name: "Ваше имя", f_phone: "Номер телефона", f_date: "Дата и время", f_guests: "Количество гостей",
-    f_send: "Отправить в WhatsApp",
-    f_err: "Пожалуйста, заполните все поля.", f_ok: "WhatsApp открыт. Отправьте сообщение, мы подтвердим бронь.",
+    f_send: "Отправить в Telegram",              // ru
+    f_err: "Пожалуйста, заполните все поля.",     f_ok: "Telegram открыт. Отправьте сообщение, мы подтвердим бронь.",      // ru
     desc: "Asr Plaza: премиум-ресторан в Джизаке. Стейки, шашлык, ассорти, турецкая и национальная кухня."
   },
   en: {
@@ -81,8 +80,8 @@ window.I18N = {
     visit_t: "Visit us", lbl_addr: "Address", lbl_hours: "Opening hours", lbl_phone: "Phone", daily: "Every day",
     book_t: "Book a table",
     f_name: "Your name", f_phone: "Phone number", f_date: "Date and time", f_guests: "Number of guests",
-    f_send: "Send via WhatsApp",
-    f_err: "Please fill in all fields.", f_ok: "WhatsApp opened. Send the message and we will confirm.",
+    f_send: "Send via Telegram",                 // en
+    f_err: "Please fill in all fields.",     f_ok: "Telegram opened. Send the message and we will confirm.",         // en
     desc: "Asr Plaza: a premium restaurant in Jizzakh. Steaks, shashlik, platters, Turkish and Uzbek cuisine."
   }
 };

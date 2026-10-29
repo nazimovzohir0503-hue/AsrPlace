@@ -114,7 +114,14 @@
 
   if ($("srch")) $("srch").addEventListener("input", function (e) { query = e.target.value; renderMenu(); });
 
-  /* Bron formasi: WhatsApp xabarini tayyorlaydi (serversiz ishlaydi). */
+  /* Bron formasi: Telegram xabarini tayyorlaydi (serversiz ishlaydi). */
+  var TG_USER = "nazimovvt";
+  /* O'tgan sanaga bron qilishni taqiqlash */
+  (function () {
+    var inp = $("form").elements["date"], n = new Date();
+    n.setMinutes(n.getMinutes() - n.getTimezoneOffset());
+    inp.min = n.toISOString().slice(0, 16);
+  })();
   $("form").addEventListener("submit", function (e) {
     e.preventDefault();
     var f = e.target, note = $("formNote");
@@ -123,7 +130,7 @@
     var d = new FormData(f);
     var msg = S.name + "\n" + t("f_name") + ": " + d.get("name") + "\n" + t("f_phone") + ": " + d.get("phone") +
               "\n" + t("f_date") + ": " + d.get("date").replace("T", " ") + "\n" + t("f_guests") + ": " + d.get("guests");
-    window.open("https://wa.me/" + S.whatsapp + "?text=" + encodeURIComponent(msg), "_blank", "noopener");
+    window.open("https://t.me/" + TG_USER + "?text=" + encodeURIComponent(msg), "_blank", "noopener");
     note.textContent = t("f_ok");
   });
 
