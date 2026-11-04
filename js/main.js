@@ -8,7 +8,7 @@
   try { var saved = localStorage.getItem("lang"); if (T[saved]) lang = saved; } catch (e) {}
 
   var t = function (k) { return T[lang][k] || k; };
-  var tel = function () { return S.phone.replace(/(\d{3})(\d{2})(\d{3})(\d{2})(\d{2})/, "+$1 $2 $3 $4 $5"); };
+  var tel = function () { return S.phone.replace(/\D/g, "").replace(/(\d{3})(\d{2})(\d{3})(\d{2})(\d{2})/, "+$1 $2 $3 $4 $5"); };
 
   function tashkentHour() {
     var h = parseInt(new Intl.DateTimeFormat("en-GB", { hour: "numeric", hour12: false, timeZone: "Asia/Tashkent" }).format(new Date()), 10);
@@ -39,16 +39,28 @@
       "<div><dt>" + t("lbl_hours") + "</dt><dd>" + t("daily") + ", " + S.open + ":00 – " + S.close + ":00</dd></div>" +
       '<div><dt>' + t("lbl_phone") + '</dt><dd><a href="tel:' + S.phone + '">' + tel() + "</a></dd></div>";
 
+    // Yo'l ko'rsatish tugmalari (koordinata bo'lsa shuni, bo'lmasa manzil matnini ishlatadi)
+    var g = S.geo && +S.geo.lat && +S.geo.lng ? S.geo : null;
+    var gUrl = "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(g ? g.lat + "," + g.lng : S.mapQuery);
+    var yUrl = g ? "https://yandex.uz/maps/?rtext=~" + g.lat + "," + g.lng + "&rtt=auto" : "https://yandex.uz/maps/?text=" + encodeURIComponent(S.mapQuery);
+    var rb = $("routeBtns");
+    if (!rb) { rb = document.createElement("div"); rb.id = "routeBtns"; rb.className = "route"; $("info").after(rb); }
+    rb.innerHTML =
+      '<a class="btn btn-gold" href="' + gUrl + '" target="_blank" rel="noopener">' + t("route_google") + "</a>" +
+      '<a class="btn btn-out" href="' + yUrl + '" target="_blank" rel="noopener">' + t("route_yandex") + "</a>" +
+      '<button class="btn btn-out" type="button" data-copy="1">' + t("copy_addr") + "</button>";
+
     $("footContact").innerHTML = '<a href="tel:' + S.phone + '">' + tel() + '</a> · <a href="' + S.instagram + '" rel="noopener">Instagram</a> · <a href="' + S.telegram + '" rel="noopener">Telegram</a>';
 
-    var map = $("map"), src = "https://www.google.com/maps?q=" + encodeURIComponent(S.mapQuery) + "&output=embed&hl=" + lang;
+    var map = $("map"), mg = S.geo && +S.geo.lat && +S.geo.lng ? S.geo : null, src = "https://www.google.com/maps?q=" + encodeURIComponent(mg ? mg.lat + "," + mg.lng : S.mapQuery) + (mg ? "&z=17" : "") + "&output=embed&hl=" + lang;
     if (map.getAttribute("src") !== src) map.setAttribute("src", src);
 
     $("ld").textContent = JSON.stringify({
-      "@context": "https://schema.org", "@type": "Restaurant", name: S.name, telephone: S.phone, email: S.email,
+      "@context": "https://schema.org", "@type": "Restaurant", name: S.name, telephone: S.phone, email: S.email || undefined,
       servesCuisine: ["Uzbek", "European", "Turkish", "Fast food"],
       address: { "@type": "PostalAddress", streetAddress: S.address.en, addressLocality: "Jizzakh", addressCountry: "UZ" },
-      openingHours: "Mo-Su " + S.open + ":00-" + S.close + ":00", sameAs: [S.instagram, S.telegram]
+      openingHours: "Mo-Su " + S.open + ":00-" + S.close + ":00", sameAs: [S.instagram, S.telegram],
+      geo: g ? { "@type": "GeoCoordinates", latitude: +g.lat, longitude: +g.lng } : undefined
     });
   }
 
@@ -101,6 +113,19 @@
 
     function render() { renderStatic(); renderMenu(); }
 
+  /* Manzilni nusxalash */
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-copy]");
+    if (!b) return;
+    var txt = S.address[lang], label = t("copy_addr");
+    function done() { b.textContent = t("copied"); setTimeout(function () { b.textContent = label; }, 2000); }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(done, done);
+    else {
+      var ta = document.createElement("textarea"); ta.value = txt; ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select(); try { document.execCommand("copy"); } catch (x) {} ta.remove(); done();
+    }
+  });
+
   document.addEventListener("click", function (e) {
     var l = e.target.closest("[data-lang]");
     if (l) { lang = l.dataset.lang; try { localStorage.setItem("lang", lang); } catch (x) {} render(); return; }
@@ -115,7 +140,8 @@
   if ($("srch")) $("srch").addEventListener("input", function (e) { query = e.target.value; renderMenu(); });
 
   /* Bron formasi: Telegram xabarini tayyorlaydi (serversiz ishlaydi). */
-  var TG_USER = "nazimovvt";
+  var TG_USER = "asrplaza_bron";
+  var FORM_T = Date.now(); // sahifa ochilgan payt; Worker'ga o'tgan vaqt (ms) yuboriladi, telefon soati noto'g'ri bo'lsa ham xato bermaydi
   /* O'tgan sanaga bron qilishni taqiqlash */
   (function () {
     var inp = $("form").elements["date"], n = new Date();
@@ -124,14 +150,56 @@
   })();
   $("form").addEventListener("submit", function (e) {
     e.preventDefault();
-    var f = e.target, note = $("formNote");
-    f.querySelectorAll("input").forEach(function (i) { i.classList.add("touched"); });
+    var f = e.target, note = $("formNote"), btn = f.querySelector("button[type=submit]");
+    if (btn && btn.disabled) return;
+    f.querySelectorAll("input, select").forEach(function (i) { i.classList.add("touched"); });
     if (!f.checkValidity()) { note.textContent = t("f_err"); return; }
     var d = new FormData(f);
-    var msg = S.name + "\n" + t("f_name") + ": " + d.get("name") + "\n" + t("f_phone") + ": " + d.get("phone") +
-              "\n" + t("f_date") + ": " + d.get("date").replace("T", " ") + "\n" + t("f_guests") + ": " + d.get("guests");
-    window.open("https://t.me/" + TG_USER + "?text=" + encodeURIComponent(msg), "_blank", "noopener");
-    note.textContent = t("f_ok");
+    var date = (d.get("date") || "").replace("T", " ");
+
+    function viaTelegram() {
+      var msg = S.name + "\n" +
+        t("f_name") + ": " + d.get("name") + "\n" +
+        t("f_phone") + ": " + d.get("phone") + "\n" +
+        t("f_date") + ": " + date + "\n" +
+        t("f_guests") + ": " + d.get("guests") + "\n" +
+        (d.get("seat") || "");
+      window.open("https://t.me/" + TG_USER + "?text=" + encodeURIComponent(msg), "_blank", "noopener");
+    }
+
+    // Worker sozlanmagan bo'lsa: eski usul (Telegram ochiladi)
+    if (!S.workerUrl) { viaTelegram(); note.textContent = t("f_ok"); return; }
+
+    var label = btn ? btn.textContent : "";
+    if (btn) { btn.disabled = true; btn.textContent = t("f_sending"); }
+    note.textContent = "";
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 10000);
+
+    fetch(S.workerUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: d.get("name"), phone: d.get("phone"), date: date,
+        guests: d.get("guests"), seat: d.get("seat") || "", lang: lang,
+        company_website: d.get("company_website") || "", t: Date.now() - FORM_T
+      }),
+      signal: ctrl ? ctrl.signal : undefined
+    }).then(function (r) {
+      // 400 (noto'g'ri ma'lumot) va 429 (juda ko'p urinish): foydalanuvchiga aytamiz, Telegram'ga o'tkazmaymiz
+      if (r.status === 429) { note.textContent = t("f_limit"); return; }
+      if (r.status === 400) { note.textContent = t("f_bad"); return; }
+      if (!r.ok) throw new Error("http " + r.status);
+      note.textContent = t("f_sent");
+      f.reset();
+      f.querySelectorAll(".touched").forEach(function (i) { i.classList.remove("touched"); });
+    }).catch(function () {
+      note.textContent = t("f_fail");
+      viaTelegram();
+    }).then(function () {
+      clearTimeout(timer);
+      if (btn) { btn.disabled = false; btn.textContent = label; }
+    });
   });
 
   render();

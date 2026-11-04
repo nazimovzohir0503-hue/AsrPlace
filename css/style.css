@@ -96,3 +96,34 @@ form .btn,.note{grid-column:1/-1}
   .menu>*{max-width:none}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* ASR Plaza haqida — bo'lim oralig'ini ixchamlashtirish */
+#about {
+  padding-top: clamp(2rem, 4vw, 3rem);
+  padding-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+#about h2 {
+  margin-bottom: 0.65rem;
+}
+
+#about .lead {
+  line-height: 1.65;
+}
+
+#about .facts {
+  margin-top: 1.4rem;
+  padding-top: 1rem;
+  gap: 1.5rem;
+}
+
+/* Bron yuborilayotganda tugma holati */
+.btn[disabled]{opacity:.6;cursor:wait;transform:none}
+
+/* Bot tuzog'i: odamga ko'rinmaydi (display:none emas, botlar uni aniqlab oladi) */
+.hp{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+
+/* Yo'l ko'rsatish tugmalari (manzil bo'limi) */
+.route{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.4rem}
+.btn-out{border-color:var(--teal);color:var(--teal);background:none}
+.btn-out:hover{background:var(--teal);color:#fff}

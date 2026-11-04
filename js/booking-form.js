@@ -63,12 +63,46 @@
   }
   function texts() {
     var x = L[document.documentElement.lang] || L.uz;
-    dl.firstChild.textContent = x.date; tl.firstChild.textContent = x.time; time.options[0].textContent = x.pick;
+    dl.firstChild.textContent = x.date; tl.firstChild.textContent = x.time; time.options[0].textContent = x.pick; seatTexts();
   }
+
+  // --- Joy turi: qayerda o'tirish (zal, xona, terrasa) ---
+  var SEAT = {
+uz: { t: "Joy turi", k: "Joy turi", o: ["Umumiy zal", "Xona", "Terrasa"] },
+ru: { t: "Тип места", k: "Место", o: ["Общий зал", "Комната", "Терраса"] },
+en: { t: "Seating area", k: "Seating", o: ["Main hall", "Private room", "Terrace"] }
+  };
+  var CSS2 =
+    "#form>.bk-full{grid-column:1/-1;display:grid;gap:.5rem}.bk-st{font-weight:700;font-size:.9rem}" +
+    ".bk-chips{display:flex;flex-wrap:wrap;gap:.6rem}.bk-chip{position:relative;display:block;cursor:pointer}" +
+    ".bk-chip input{position:absolute;opacity:0;width:1px;height:1px;padding:0;margin:0;pointer-events:none}" +
+    ".bk-chip span{display:inline-block;padding:.6rem 1.2rem;border-radius:999px;border:2px solid rgba(255,255,255,.4);color:#fff;font-weight:700;font-size:.95rem;transition:background .15s,color .15s,border-color .15s}" +
+    ".bk-chip:hover span{border-color:var(--gold)}.bk-chip input:checked+span{background:var(--gold);border-color:var(--gold);color:var(--teal)}" +
+    ".bk-chip input:focus-visible+span{outline:3px solid var(--gold);outline-offset:3px}";
+  var st2 = document.createElement("style"); st2.textContent = CSS2; document.head.appendChild(st2);
+  var seatWrap = document.createElement("div"); seatWrap.className = "bk-full";
+ seatWrap.innerHTML = '<span class="bk-st"></span>' +
+  '<select name="seat_choice" id="bkSeat">' +
+  [0,1,2].map(function(i){ return '<option value="'+i+'"'+(i===0?' selected':'')+'>'+' </option>'; }).join('') +
+  '</select>' +
+  '<input type="hidden" name="seat">';
+  f.querySelector("button[type=submit]").before(seatWrap);
+  var seatOut = seatWrap.querySelector('input[name="seat"]');
+  function seatTexts() {
+  var x = SEAT[document.documentElement.lang] || SEAT.uz;
+  seatWrap.querySelector(".bk-st").textContent = x.t;
+  var sel = seatWrap.querySelector("select#bkSeat");
+  [].forEach.call(sel.options, function(op, i){ op.textContent = x.o[i]; });
+  seatOut.value = x.k + ": " + x.o[sel.selectedIndex];
+}
+  seatWrap.querySelector("select#bkSeat").addEventListener("change", function(){
+  var x = SEAT[document.documentElement.lang] || SEAT.uz;
+  seatOut.value = x.k + ": " + x.o[this.selectedIndex];
+});
 
   date.addEventListener("change", refresh);
   time.addEventListener("change", sync);
-  f.addEventListener("reset", function () { setTimeout(refresh, 0); });
+  f.addEventListener("reset", function () { setTimeout(function () { refresh(); seatTexts(); }, 0); });
   f.addEventListener("invalid", function (e) { e.target.classList.add("touched"); }, true);
   document.addEventListener("click", function (e) { if (e.target.closest("[data-lang]")) texts(); });
   texts(); refresh();
