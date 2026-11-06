@@ -12,7 +12,7 @@ window.SITE = {
   // Bo'sh qoldirilsa, bron eski usulda: Telegram ochiladi.
   workerUrl: "",                     // masalan: "https://asr-bron.SIZNING-NOM.workers.dev"
   instagram: "https://www.instagram.com/asrplaza?psln=MXFoaXphcmJ0bGZxcQ==",   // TODO
-  telegram: "https://t.me/nazimovvt",             // TODO
+  telegram: "https://t.me/asrplaza_bron",             // TODO
   open: 11, close: 22,               // ish vaqti (soat), har kuni
   mapQuery: "ASR Plaza, Jizzax shahri, Uzbekistan",  // TODO: aniq manzil yoki koordinata
   geo: { lat: 40.122138, lng: 67.845977 },                        // restoranning aniq koordinatasi: marshrut tugmalari va xarita shuni ishlatadi
@@ -26,6 +26,7 @@ window.SITE = {
 
 window.I18N = {
   uz: {
+    nav_home: "Bosh sahifa",
     nav_about: "Biz haqimizda", nav_menu: "Menyu", nav_visit: "Manzil", book: "Stol band qilish",
     hero_t: "Jizzaxdagi Premium Restoran — Asr Plaza",
     hero_p: "Steyk va shashlik, katta assortilar, turk taomlari, pitsa va milliy taomlar. Oila, do'stlar va ish uchrashuvlari uchun nafis muhit.",
@@ -49,6 +50,7 @@ window.I18N = {
     desc: "Asr Plaza: Jizzaxdagi premium restoran. Steyk, shashlik, assorti, turk va milliy taomlar."
   },
   ru: {
+    nav_home: "Главная",
     nav_about: "О нас", nav_menu: "Меню", nav_visit: "Адрес", book: "Забронировать стол",
     hero_t: "Премиум-ресторан в Джизаке — Asr Plaza",
     hero_p: "Стейки и шашлык, большие ассорти, турецкие блюда, пицца и национальная кухня. Изысканная атмосфера для семьи, друзей и деловых встреч.",
@@ -72,6 +74,7 @@ window.I18N = {
     desc: "Asr Plaza: премиум-ресторан в Джизаке. Стейки, шашлык, ассорти, турецкая и национальная кухня."
   },
   en: {
+    nav_home: "Home",
     nav_about: "About", nav_menu: "Menu", nav_visit: "Visit", book: "Book a table",
     hero_t: "Premium Restaurant in Jizzakh — Asr Plaza",
     hero_p: "Steaks and shashlik, grand platters, Turkish dishes, pizza and Uzbek cuisine. A refined setting for family, friends and business meetings.",
