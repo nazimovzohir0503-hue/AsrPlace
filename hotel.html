@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ASR Plaza - Mehmonxona</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/nav.css">
+</head>
+<body>
+<header class="top">
+  <a class="logo" href="index.html"><img src="images/logo.png" alt="" width="46" height="46"><span>Asr Plaza</span></a>
+  <nav class="links" id="mnav">
+    <a href="index.html#about" data-i18n="nav_about"></a>
+    <a href="index.html#menu" data-i18n="nav_menu"></a>
+    <a href="index.html#delivery" data-i18n="nav_delivery">Yetkazib berish</a>
+    <a href="hotel.html" data-i18n="nav_hotel" style="color:var(--gold)"></a>
+    <a href="pool.html" data-i18n="nav_pool"></a>
+    <a href="index.html#visit" data-i18n="nav_visit"></a>
+    <a class="nav-book btn btn-gold" href="index.html#book" data-i18n="book"></a>
+  </nav>
+  <div class="lang" role="group">
+    <button data-lang="uz">UZ</button><button data-lang="ru">RU</button><button data-lang="en">EN</button>
+  </div>
+  <button class="burger" type="button" aria-controls="mnav"><span></span></button>
+</header>
+
+<main id="top" style="padding-top: 3rem; min-height: 80vh; background: var(--ivory);">
+  <section class="sec hotel" id="hotel" style="max-width: 1200px; margin: 0 auto;">
+    <h2 data-i18n="hotel_t" style="text-align:center; font-size: 2.5rem;"></h2>
+    <p class="lead" data-i18n="hotel_p" style="text-align:center; margin: 0 auto;"></p>
+    
+    <div class="facility-grid" id="hotelGrid"></div>
+    <div class="hotel-info-box" id="hotelInfo"></div>
+  </section>
+</main>
+
+<footer class="foot">
+  <span>© <span id="year"></span> ASR Plaza Hotel</span>
+  <span id="footContact"></span>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/nav.js"></script>
+</body>
+</html>

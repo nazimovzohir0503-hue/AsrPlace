@@ -28,6 +28,30 @@ window.I18N = {
   uz: {
     nav_home: "Bosh sahifa",
     nav_about: "Biz haqimizda", nav_menu: "Menyu", nav_visit: "Manzil", book: "Stol band qilish",
+    nav_hotel: "Mehmonxona", nav_pool: "Basseyn",
+    nav_delivery: "Yetkazib berish",
+    hotel_t: "ASR Plaza Hotel",
+    hotel_p: "29 ta shinam xonalar, qulay sharoitlar va yuqori darajadagi servis. Nonushta va barcha qulayliklar narx ichida.",
+    pool_t: "Yopiq basseyn va dam olish hududi",
+    pool_p: "Yil bo'yi qulay haroratdagi suv, shinam dam olish zonalari va maxsus servis.",
+    hotel_call: "Qo'ng'iroq qilish",
+    hotel_book_tg: "Telegram orqali bron",
+    pool_badge: "Yopiq basseyn",
+    pool_for6: "6 kishi uchun",
+    pool_extra_lbl: "+ Har bir qo'shimcha kishi uchun:",
+    pool_p1: "Qishin-yozin iliq va toza suv",
+    pool_p2: "Shinam va sokin dam olish joylari",
+    pool_p3: "Restorandan taom va ichimliklar buyurtma qilish imkoniyati",
+    pool_tg_btn: "Telegram orqali yozish",
+    
+    // ===== YAQINDA QO'SHILGAN BASSEYN GALEREYASI TARJIMALARI =====
+    pool_g1: "Zamonaviy basseyn va kino-ekran",
+    pool_g2: "Estetik kutib olish zonasi",
+    pool_g3: "Shifobaxsh fin saunasi",
+    pool_g4: "Atmosferali dam olish zonasi",
+    pool_g5: "Kristaldek toza va iliq suv",
+    // =============================================================
+
     hero_t: "Jizzaxdagi Premium Restoran — Asr Plaza",
     hero_p: "Steyk va shashlik, katta assortilar, turk taomlari, pitsa va milliy taomlar. Oila, do'stlar va ish uchrashuvlari uchun nafis muhit.",
     see_menu: "Menyuni ko'rish",
@@ -52,6 +76,30 @@ window.I18N = {
   ru: {
     nav_home: "Главная",
     nav_about: "О нас", nav_menu: "Меню", nav_visit: "Адрес", book: "Забронировать стол",
+    nav_hotel: "Отель", nav_pool: "Бассейн",
+    nav_delivery: "Доставка",
+    hotel_t: "Отель ASR Plaza",
+    hotel_p: "29 уютных номеров, первоклассные условия и сервис. Завтрак и все удобства включены в стоимость.",
+    pool_t: "Крытый бассейн и зона отдыха",
+    pool_p: "Комфортная температура воды круглый год, уютные зоны отдыха и сервис.",
+    hotel_call: "Позвонить",
+    hotel_book_tg: "Бронь через Telegram",
+    pool_badge: "Крытый бассейн",
+    pool_for6: "на 6 человек",
+    pool_extra_lbl: "+ За каждого дополнительного человека:",
+    pool_p1: "Теплая и чистая вода круглый год",
+    pool_p2: "Уютная и спокойная зона отдыха",
+    pool_p3: "Возможность заказа блюд и напитков из ресторана",
+    pool_tg_btn: "Написать в Telegram",
+
+    // ===== YAQINDA QO'SHILGAN BASSEYN GALEREYASI TARJIMALARI =====
+    pool_g1: "Современный бассейн и киноэкран",
+    pool_g2: "Эстетичная зона ожидания",
+    pool_g3: "Целебная финская сауна",
+    pool_g4: "Атмосферная зона отдыха",
+    pool_g5: "Кристально чистая и теплая вода",
+    // =============================================================
+
     hero_t: "Премиум-ресторан в Джизаке — Asr Plaza",
     hero_p: "Стейки и шашлык, большие ассорти, турецкие блюда, пицца и национальная кухня. Изысканная атмосфера для семьи, друзей и деловых встреч.",
     see_menu: "Смотреть меню",
@@ -76,6 +124,30 @@ window.I18N = {
   en: {
     nav_home: "Home",
     nav_about: "About", nav_menu: "Menu", nav_visit: "Visit", book: "Book a table",
+    nav_hotel: "Hotel", nav_pool: "Pool",
+    nav_delivery: "Delivery",
+    hotel_t: "ASR Plaza Hotel",
+    hotel_p: "29 comfortable rooms, premium amenities, and top-tier service. Breakfast included.",
+    pool_t: "Indoor Pool & Relaxation Area",
+    pool_p: "Comfortable water temperature year-round, cozy rest areas, and dedicated service.",
+    hotel_call: "Call Us",
+    hotel_book_tg: "Book via Telegram",
+    pool_badge: "Indoor pool",
+    pool_for6: "for 6 persons",
+    pool_extra_lbl: "+ For each additional guest:",
+    pool_p1: "Warm and clean water all year round",
+    pool_p2: "Cozy and tranquil relaxation areas",
+    pool_p3: "Food and beverage ordering from the restaurant",
+    pool_tg_btn: "Message on Telegram",
+
+    // ===== YAQINDA QO'SHILGAN BASSEYN GALEREYASI TARJIMALARI =====
+    pool_g1: "Modern pool and cinema screen",
+    pool_g2: "Aesthetic reception area",
+    pool_g3: "Healing Finnish sauna",
+    pool_g4: "Atmospheric relaxation zone",
+    pool_g5: "Crystal clear and warm water",
+    // =============================================================
+
     hero_t: "Premium Restaurant in Jizzakh — Asr Plaza",
     hero_p: "Steaks and shashlik, grand platters, Turkish dishes, pizza and Uzbek cuisine. A refined setting for family, friends and business meetings.",
     see_menu: "See the menu",
@@ -132,3 +204,87 @@ window.HERO = [
   { img: "images/hero/h1.jpg", cat: "steak", l: { uz: "Steyklar", ru: "Стейки", en: "Steaks" } },
   { img: "images/hero/h6.jpg", cat: "pz", l: { uz: "Fast food", ru: "Фастфуд", en: "Fast food" } }
 ];
+/* ===== HOTEL, BASSEYN VA BRON MA'LUMOTLARI ===== */
+window.HOTEL_ROOMS = [
+  {
+    id: "standard",
+    name: { uz: "Standard toifasi", ru: "Категория Standard", en: "Standard Category" },
+    total: { uz: "Jami 16 ta xona", ru: "Всего 16 номеров", en: "16 rooms total" },
+    img: "images/hotel/standard.jpg",
+    features: {
+      uz: ["Bepul Wi-Fi", "Smart TV", "Mini-bar", "Konditsioner", "Shved stoli nonushta", "Tursbor kiritilgan"],
+      ru: ["Бесплатный Wi-Fi", "Smart TV", "Мини-бар", "Кондиционер", "Завтрак шведский стол", "Турсбор включен"],
+      en: ["Free Wi-Fi", "Smart TV", "Mini-bar", "Air Conditioning", "Buffet breakfast", "Tourism fee included"]
+    }
+  },
+  {
+    id: "deluxe",
+    name: { uz: "Deluxe toifasi", ru: "Категория Deluxe", en: "Deluxe Category" },
+    total: { uz: "Jami 8 ta xona", ru: "Всего 8 номеров", en: "8 rooms total" },
+    img: "images/hotel/deluxe.jpg",
+    features: {
+      uz: ["Kengaytirilgan maydon", "Bepul Wi-Fi", "Smart TV", "Mini-bar", "Konditsioner", "Shved stoli nonushta"],
+      ru: ["Увеличенная площадь", "Бесплатный Wi-Fi", "Smart TV", "Мини-бар", "Кондиционер", "Завтрак"],
+      en: ["Spacious area", "Free Wi-Fi", "Smart TV", "Mini-bar", "Air Conditioning", "Buffet breakfast"]
+    }
+  },
+  {
+    id: "triple",
+    name: { uz: "Triple toifasi", ru: "Номер Triple (3-местный)", en: "Triple Room" },
+    total: { uz: "2 ta xona", ru: "2 номера", en: "2 rooms" },
+    img: "images/hotel/triple.jpg",
+    features: {
+      uz: ["3 kishilik joy", "Bepul Wi-Fi", "Smart TV", "Konditsioner", "Shved stoli nonushta"],
+      ru: ["Размещение на 3 чел.", "Wi-Fi", "Smart TV", "Кондиционер", "Завтрак"],
+      en: ["3 guests capacity", "Wi-Fi", "Smart TV", "AC", "Buffet breakfast"]
+    }
+  },
+  {
+    id: "luxury",
+    name: { uz: "Lyuks toifasi", ru: "Категория Luxury", en: "Luxury Category" },
+    total: { uz: "3 ta xona", ru: "3 номера", en: "3 rooms" },
+    img: "images/hotel/luxury.jpg",
+    features: {
+      uz: ["Eksklyuziv interyer", "King Size yotoq", "Mini-bar", "Konditsioner", "Shved stoli nonushta"],
+      ru: ["Эксклюзивный интерьер", "Кровать King Size", "Мини-бар", "Кондиционер", "Завтрак"],
+      en: ["Exclusive interior", "King Size bed", "Mini-bar", "AC", "Buffet breakfast"]
+    }
+  }
+];
+window.HOTEL_RULES = {
+  uz: [
+    { title: "Nonushta (Shved stoli)", desc: "Xona narxiga kiritilgan! Har kuni soat 07:00 dan 10:00 gacha." },
+    { title: "Turistik yig'im (Tursbor)", desc: "Xona tarifiga to'liq kiritilgan, ortiqcha to'lov yo'q." },
+    { title: "Check-in / Check-out", desc: "Kirish vaqti: 14:00 | Chiqish vaqti: 12:00." },
+    { title: "Erta kirish / Kech chiqish", desc: "06:00 gacha: 100% (nonushta bilan) · 06:00-12:00: 50% · 12:00-18:00 kech chiqishda har bir soatga 10% to'lov." },
+    { title: "Bron va oldindan to'lov", desc: "5 xonagacha oldindan to'lov olinmaydi. 5 xonadan oshsa, zaklad olinadi. Bekor qilishda oldindan xabar bering." },
+    { title: "Chekish taqiqlanadi!", desc: "Barcha xonalarda chekish qat'iyan taqiqlangan. Jarima miqdori: 500 000 so'm." }
+  ],
+  ru: [
+    { title: "Завтрак (Шведский стол)", desc: "Включен в стоимость! Ежедневно с 07:00 до 10:00." },
+    { title: "Туристический сбор", desc: "Включен в стоимость проживания." },
+    { title: "Check-in / Check-out", desc: "Время заезда: 14:00 | Время выезда: 12:00." },
+    { title: "Ранний заезд / Поздний выезд", desc: "До 06:00: 100% (с завтраком) · 06:00-12:00: 50% · 12:00-18:00: 10% в час." },
+    { title: "Бронь и предоплата", desc: "До 5 номеров без предоплаты. Свыше 5 номеров взимается залог." },
+    { title: "Курение запрещено!", desc: "Курение в номерах строго запрещено. Штраф: 500 000 сум." }
+  ],
+  en: [
+    { title: "Breakfast (Buffet)", desc: "Included in room rate! Daily from 07:00 to 10:00." },
+    { title: "Tourism Fee", desc: "Fully included in the room rate." },
+    { title: "Check-in / Check-out", desc: "Check-in: 14:00 | Check-out: 12:00." },
+    { title: "Early Arrival / Late Departure", desc: "Before 06:00: 100% · 06:00-12:00: 50% · 12:00-18:00: 10% per hour." },
+    { title: "Booking Policy", desc: "No prepayment up to 5 rooms. Deposit required for 5+ rooms." },
+    { title: "No Smoking!", desc: "Smoking is strictly prohibited in all rooms. Fine: 500,000 UZS." }
+  ]
+};
+
+window.POOL_DATA = {
+  priceBase: "900 000",
+  extraPerson: "150 000",
+  contacts: {
+    phone: "551527070",
+    phoneDisplay: "+998 55 152 70 70",
+    telegram: "https://t.me/asrplaza_hotel",
+    instagram: "https://instagram.com/asrplazahotel"
+  }
+};

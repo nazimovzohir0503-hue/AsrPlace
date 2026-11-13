@@ -20,11 +20,14 @@
 <body>
 <header class="top">
   <a class="logo" href="#top"><img src="images/logo.png" alt="" width="46" height="46"><span>Asr Plaza</span></a>
-  <nav class="links" id="mnav">
-    <a href="#about" data-i18n="nav_about"></a>
-    <a href="#menu" data-i18n="nav_menu"></a>
-    <a href="#visit" data-i18n="nav_visit"></a>
-    <a class="nav-book btn btn-gold" href="#book" data-i18n="book"></a>
+<nav class="links" id="mnav">
+    <a href="index.html#about" data-i18n="nav_about"></a>
+    <a href="index.html#menu" data-i18n="nav_menu"></a>
+    <a href="index.html#delivery" data-i18n="nav_delivery">Yetkazib berish</a>
+    <a href="hotel.html" data-i18n="nav_hotel"></a>
+    <a href="pool.html" data-i18n="nav_pool"></a>
+    <a href="index.html#visit" data-i18n="nav_visit"></a>
+    <a class="nav-book btn btn-gold" href="index.html#book" data-i18n="book"></a>
   </nav>
   <div class="lang" role="group" aria-label="Language">
     <button data-lang="uz">UZ</button><button data-lang="ru">RU</button><button data-lang="en">EN</button>
@@ -83,6 +86,11 @@
   <button class="btn btn-red" type="submit" data-i18n="f_send"></button>
   <p class="note" id="formNote" role="status"></p>
 </form>
+<div class="to-top-wrapper">
+  <button type="button" class="static-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Tepaga chiqish">
+    ▲
+  </button>
+</div>
   </section>
 </main>
 
@@ -90,7 +98,7 @@
   <span>© <span id="year"></span> ASR Plaza</span>
   <span id="footContact"></span>
 </footer>
-
+<button id="scrollTopBtn" class="scroll-top-btn" title="Tepaga chiqish" aria-label="Tepaga chiqish">&#8593;</button>
 <script src="js/data.js"></script>
 <script src="js/main.js"></script>
 <script src="js/nav.js"></script>

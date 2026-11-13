@@ -258,3 +258,543 @@ form .btn,.note{grid-column:1/-1}
     padding: 0.5rem 0.75rem !important;
   }
 }
+/* ===== MEHMONXONA VA BASSEYN SAHIFA USLUBLARI (PREMIUM) ===== */
+.facility-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.fac-card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(31, 51, 80, 0.08);
+  border: 1px solid rgba(201, 162, 104, 0.25);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.fac-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(31, 51, 80, 0.14);
+}
+
+.fac-img-wrap {
+  width: 100%;
+  height: 240px;
+  position: relative;
+  background: var(--teal);
+}
+
+.fac-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.fac-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(31, 51, 80, 0.88);
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  backdrop-filter: blur(4px);
+}
+
+.fac-body {
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.fac-body h3 {
+  font-size: 1.55rem;
+  color: var(--teal);
+  margin-bottom: 0.3rem;
+}
+
+.fac-sub {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+}
+
+.fac-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.6rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.fac-features li {
+  font-size: 0.93rem;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.fac-features li span {
+  color: var(--gold);
+  font-weight: 800;
+}
+
+.fac-bot {
+  margin-top: auto;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(31, 51, 80, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.fac-price {
+  font-weight: 800;
+  color: var(--gold);
+  font-size: 1.15rem;
+}
+
+.fac-actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.fac-actions .btn {
+  flex: 1;
+  text-align: center;
+  padding: 0.65rem 0.8rem;
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+
+/* Mehmonxona qoidalari (Rules) */
+.hotel-info-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.4rem;
+  background: rgba(31, 51, 80, 0.04);
+  padding: 2.2rem;
+  border-radius: 20px;
+  border: 1px solid rgba(201, 162, 104, 0.3);
+  margin-top: 2rem;
+}
+
+.rule-card {
+  background: #ffffff;
+  padding: 1.4rem;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.rule-card h4 {
+  font-family: var(--head);
+  font-size: 1.1rem;
+  color: var(--teal);
+  margin-bottom: 0.5rem;
+}
+
+.rule-card p {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Yopiq Basseyn maxsus qutisi */
+.pool-hero-box {
+  background: var(--teal-2);
+  border: 2px solid var(--gold);
+  border-radius: 24px;
+  padding: 3rem 2rem;
+  color: #ffffff;
+  max-width: 680px;
+  margin: 2rem auto;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+.pool-rate-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--teal);
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.pool-hero-box h3 {
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.pool-price-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.pool-price-row .big-sum {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--gold);
+  font-family: var(--head);
+}
+
+.pool-price-row .unit {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.pool-extra-info {
+  font-size: 1.05rem;
+  color: var(--sand);
+  margin-bottom: 2rem;
+}
+
+.pool-perks {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 2.2rem;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.7rem;
+}
+
+.pool-perks li {
+  font-size: 0.98rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.pool-perks li span {
+  color: var(--gold);
+  font-weight: 800;
+}
+
+.pool-contacts {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pool-contacts .btn {
+  padding: 0.85rem 1.8rem;
+  font-size: 1rem;
+}
+
+/* Telefon ekrani uchun optimizatsiya */
+@media (max-width: 640px) {
+  .facility-grid {
+    grid-template-columns: 1fr;
+  }
+  .hotel-info-box {
+    padding: 1.4rem;
+    grid-template-columns: 1fr;
+  }
+  .pool-hero-box {
+    padding: 2rem 1.2rem;
+  }
+  .pool-price-row .big-sum {
+    font-size: 2.2rem;
+  }
+  .pool-contacts .btn {
+    width: 100%;
+  }
+  .fac-actions {
+    flex-direction: column;
+  }
+}
+/* Bron formasi tagidagi cho'ziq tepaga chiqish tugmasi */
+.to-top-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 1.2rem auto 1.5rem auto;
+  width: 100%;
+}
+
+.static-top-btn {
+  background: var(--gold, #c69c59);
+  color: #10131c;
+  border: none;
+  border-radius: 25px;
+  width: 140px;            /* Eniga cho'ziqroq o'lcham */
+  height: 44px;           /* Balandligi qulay bosiladigan */
+  font-size: 1.2rem;      /* Strelka aniq va ko'rinarli */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.static-top-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.static-top-btn:active {
+  transform: translateY(0);
+}
+/* ===== BASSEYN BENTO GALEREYASI ===== */
+.pool-gallery-section {
+  padding: 3rem 0 5rem 0;
+}
+
+.bento-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 220px;
+  gap: 15px;
+  width: 100%;
+}
+
+.bento-item {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.bento-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Kursor borganda rasmni kattalashtirish */
+.bento-item:hover img {
+  transform: scale(1.08);
+}
+
+/* Rasm ustidagi qorayuvchi fon va yozuv */
+.bento-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(16, 19, 28, 0.8) 0%, transparent 60%);
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.bento-item:hover .bento-overlay {
+  opacity: 1;
+}
+
+.bento-overlay span {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  transform: translateY(10px);
+  transition: transform 0.3s ease;
+}
+
+.bento-item:hover .bento-overlay span {
+  transform: translateY(0);
+}
+
+/* Rasmlarning vertikal va gorizontal shakliga moslangan o'lchamlar */
+.bento-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 250px;
+  gap: 15px;
+  width: 100%;
+}
+
+.item-main {
+  grid-column: span 2;
+  grid-row: span 2; /* Eng katta bosh rasm */
+}
+
+.item-vertical {
+  grid-column: span 1;
+  grid-row: span 2; /* Bo'yiga uzun rasmlar (Sauna va Kirish) */
+}
+
+.item-tall {
+  grid-column: span 2;
+  grid-row: span 2; /* Oy fonli rasm (Katta qilib ko'rsatamiz) */
+}
+
+.item-wide {
+  grid-column: span 2;
+  grid-row: span 2; /* Ikkinchi gorizontal basseyn */
+}
+
+/* Mobil uchun moslashuv */
+@media (max-width: 992px) {
+  .bento-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .item-main, .item-vertical, .item-tall, .item-wide {
+    grid-column: span 2;
+    grid-row: span 1; /* Telefonda hammasi ketma-ket chiroyli turadi */
+  }
+}
+/* ===== BASSEYN ORQA FON VIDEOSI ===== */
+.pool-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Videoni qiyshaytirmasdan butun ekranga yoyadi */
+  z-index: 0;
+}
+
+.pool-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(16, 19, 28, 0.55); /* Hashamatli qorong'u effekt */
+  z-index: 1;
+}
+
+/* Telefonlar uchun matnlarni biroz moslash */
+@media (max-width: 768px) {
+  #pool h2 { font-size: 2rem !important; }
+}
+/* ===== KARTAGA PREMIUM SHISHA EFFEKTI (GLASSMORPHISM) ===== */
+.pool-hero-box {
+  background: rgba(16, 19, 28, 0.35) !important; /* Karta endi yarim shaffof */
+  backdrop-filter: blur(15px); /* Orqadagi videoni shishadek xiralashtiradi */
+  -webkit-backdrop-filter: blur(15px); /* iPhone'lar uchun */
+  border: 1px solid rgba(255, 255, 255, 0.1) !important; /* Juda yupqa va nafis chekka ramka */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4) !important; /* Chuqur soya */
+}
+/* ===== 1. TUGMALAR UCHUN "YURAK URISHI" (PULSE) VA YALTIRASH EFFEKTI ===== */
+.btn-gold {
+  animation: pulse-gold 2s infinite;
+  position: relative;
+  overflow: hidden;
+}
+@keyframes pulse-gold {
+  0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.6); }
+  70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+}
+/* Tugma ustidan yorug'lik o'tishi */
+.btn-gold::after {
+  content: ''; position: absolute; top: -50%; left: -60%;
+  width: 20%; height: 200%; background: rgba(255,255,255,0.3);
+  transform: rotate(45deg); transition: all 0.5s ease;
+}
+.btn-gold:hover::after { left: 120%; }
+
+/* ===== 2. LIGHTBOX (RASMNI TO'LIQ EKRANDA OCHISH) ===== */
+.lightbox {
+  display: none; position: fixed; z-index: 9999;
+  padding-top: 80px; left: 0; top: 0; width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.lightbox-content {
+  margin: auto; display: block; max-width: 90%; max-height: 80vh;
+  border-radius: 12px; animation: zoomIn 0.3s;
+}
+.lightbox-close {
+  position: absolute; top: 30px; right: 40px; color: #fff;
+  font-size: 45px; font-weight: bold; cursor: pointer; transition: 0.3s;
+}
+.lightbox-close:hover { color: var(--gold); }
+@keyframes zoomIn { from {transform:scale(0.8); opacity:0} to {transform:scale(1); opacity:1} }
+
+/* ===== 3. SKELETON LOADING (YUKLANISH KUTISH EFFEKTI) ===== */
+.skeleton-box {
+  background: rgba(255,255,255,0.05); border-radius: 16px;
+  padding: 2.5rem; width: 100%; max-width: 500px; margin: 0 auto;
+  animation: pulse-bg 1.5s infinite; border: 1px solid rgba(255,255,255,0.1);
+}
+.skel-title { height: 35px; background: rgba(255,255,255,0.1); border-radius: 8px; margin: 0 auto 20px auto; width: 60%; }
+.skel-price { height: 60px; background: rgba(255,255,255,0.1); border-radius: 8px; margin: 0 auto 30px auto; width: 50%; }
+.skel-line { height: 20px; background: rgba(255,255,255,0.1); border-radius: 8px; margin: 0 auto 15px auto; width: 80%; }
+.skel-btn { height: 50px; background: rgba(212, 175, 55, 0.3); border-radius: 30px; margin: 20px auto 0 auto; width: 70%; }
+@keyframes pulse-bg { 0% { opacity: 0.6; } 50% { opacity: 1; } 100% { opacity: 0.6; } }
+/* ===== 4. SCROLL ANIMATSIYASI (RASMLAR QALQIB CHIQISHI) ===== */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(60px); /* Boshida 60px pastda turadi */
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.reveal-item.active {
+  opacity: 1;
+  transform: translateY(0); /* O'z joyiga suzib chiqadi */
+}
+/* Ketma-ket (kaskad) chiqishi uchun har bir rasmga kechikish (delay) beramiz */
+.bento-item:nth-child(1).reveal-item { transition-delay: 0.1s; }
+.bento-item:nth-child(2).reveal-item { transition-delay: 0.2s; }
+.bento-item:nth-child(3).reveal-item { transition-delay: 0.3s; }
+.bento-item:nth-child(4).reveal-item { transition-delay: 0.4s; }
+.bento-item:nth-child(5).reveal-item { transition-delay: 0.5s; }
+/* ===== BASSEYN FOOTER ALOQA TUGMALARI (RESTORANNIKI KABI) ===== */
+.pool-contacts {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.pool-contacts a {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 6px 14px;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+.pool-contacts a:hover {
+  background: rgba(212, 175, 55, 0.2);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+/* ===== 4. SCROLL ANIMATSIYASI (RASMLAR QALQIB CHIQISHI) ===== */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(60px); /* Boshida 60px pastda turadi */
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.reveal-item.active {
+  opacity: 1;
+  transform: translateY(0); /* O'z joyiga suzib chiqadi */
+}
+/* Ketma-ket (kaskad) chiqishi uchun har bir rasmga kechikish (delay) beramiz */
+.bento-item:nth-child(1).reveal-item { transition-delay: 0.1s; }
+.bento-item:nth-child(2).reveal-item { transition-delay: 0.2s; }
+.bento-item:nth-child(3).reveal-item { transition-delay: 0.3s; }
+.bento-item:nth-child(4).reveal-item { transition-delay: 0.4s; }
+.bento-item:nth-child(5).reveal-item { transition-delay: 0.5s; }
