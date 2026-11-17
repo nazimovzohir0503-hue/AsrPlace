@@ -32,6 +32,7 @@ window.I18N = {
     nav_delivery: "Yetkazib berish",
     hotel_t: "ASR Plaza Hotel",
     hotel_p: "29 ta shinam xonalar, qulay sharoitlar va yuqori darajadagi servis. Nonushta va barcha qulayliklar narx ichida.",
+    hotel_atmos_t: "Mehmonxona muhiti va qulayliklari",
     pool_t: "Yopiq basseyn va dam olish hududi",
     pool_p: "Yil bo'yi qulay haroratdagi suv, shinam dam olish zonalari va maxsus servis.",
     hotel_call: "Qo'ng'iroq qilish",
@@ -80,6 +81,7 @@ window.I18N = {
     nav_delivery: "Доставка",
     hotel_t: "Отель ASR Plaza",
     hotel_p: "29 уютных номеров, первоклассные условия и сервис. Завтрак и все удобства включены в стоимость.",
+    hotel_atmos_t: "Атмосфера и удобства отеля",
     pool_t: "Крытый бассейн и зона отдыха",
     pool_p: "Комфортная температура воды круглый год, уютные зоны отдыха и сервис.",
     hotel_call: "Позвонить",
@@ -128,6 +130,7 @@ window.I18N = {
     nav_delivery: "Delivery",
     hotel_t: "ASR Plaza Hotel",
     hotel_p: "29 comfortable rooms, premium amenities, and top-tier service. Breakfast included.",
+    hotel_atmos_t: "Hotel Atmosphere & Amenities",
     pool_t: "Indoor Pool & Relaxation Area",
     pool_p: "Comfortable water temperature year-round, cozy rest areas, and dedicated service.",
     hotel_call: "Call Us",
@@ -205,55 +208,182 @@ window.HERO = [
   { img: "images/hero/h6.jpg", cat: "pz", l: { uz: "Fast food", ru: "Фастфуд", en: "Fast food" } }
 ];
 /* ===== HOTEL, BASSEYN VA BRON MA'LUMOTLARI ===== */
+// ASR Plaza - Ma'lumotlar bazasi (Data.js)
+
+// 1. Mehmonxona Xonalari (Bot havolasi bilan)
 window.HOTEL_ROOMS = [
   {
     id: "standard",
-    name: { uz: "Standard toifasi", ru: "Категория Standard", en: "Standard Category" },
-    total: { uz: "Jami 16 ta xona", ru: "Всего 16 номеров", en: "16 rooms total" },
+    name: { uz: "Standard toifasi", ru: "Категория Стандарт", en: "Standard Category" },
     img: "images/hotel/standard.jpg",
+    total: { uz: "1 kishilik / 2 kishilik", ru: "Одноместный / Двухместный", en: "Single / Double" },
+    types: { uz: "1 kishilik: 500 000 so'm | 2 kishilik: 800 000 so'm", ru: "1 местный: 500 000 сум | 2 местный: 800 000 сум", en: "Single: 500,000 UZS | Double: 800,000 UZS" },
     features: {
       uz: ["Bepul Wi-Fi", "Smart TV", "Mini-bar", "Konditsioner", "Shved stoli nonushta", "Tursbor kiritilgan"],
-      ru: ["Бесплатный Wi-Fi", "Smart TV", "Мини-бар", "Кондиционер", "Завтрак шведский стол", "Турсбор включен"],
-      en: ["Free Wi-Fi", "Smart TV", "Mini-bar", "Air Conditioning", "Buffet breakfast", "Tourism fee included"]
-    }
+      ru: ["Бесплатный Wi-Fi", "Smart TV", "Мини-бар", "Кондиционер", "Завтрак шведский стол", "Туристический сбор включен"],
+      en: ["Free Wi-Fi", "Smart TV", "Mini-bar", "Air conditioning", "Buffet breakfast", "Tourism fee included"]
+    },
+    telegramLink: "https://t.me/AsrPlazaHotel_bot?text=Assalomu%20alaykum!%20Men%20Standard%20xonasini%20bron%20qilmoqchiman:%0A%0A🏨%20Xona:%20Standard%0A👥%20Mehmonlar%20soni:%20[Kishi%20soni]%0A📅%20Kelish%20sanasi:%20[Sanani%20kiriting]%0A📞%20Telefon:[Raqamingiz]"
   },
   {
     id: "deluxe",
-    name: { uz: "Deluxe toifasi", ru: "Категория Deluxe", en: "Deluxe Category" },
-    total: { uz: "Jami 8 ta xona", ru: "Всего 8 номеров", en: "8 rooms total" },
+    name: { uz: "Deluxe toifasi", ru: "Категория Делюкс", en: "Deluxe Category" },
     img: "images/hotel/deluxe.jpg",
+    total: { uz: "2 kishilik", ru: "Двухместный", en: "Double" },
+    types: { uz: "Narxi: 1 000 000 so'm", ru: "Цена: 1 000 000 сум", en: "Price: 1,000,000 UZS" },
     features: {
-      uz: ["Kengaytirilgan maydon", "Bepul Wi-Fi", "Smart TV", "Mini-bar", "Konditsioner", "Shved stoli nonushta"],
-      ru: ["Увеличенная площадь", "Бесплатный Wi-Fi", "Smart TV", "Мини-бар", "Кондиционер", "Завтрак"],
-      en: ["Spacious area", "Free Wi-Fi", "Smart TV", "Mini-bar", "Air Conditioning", "Buffet breakfast"]
-    }
+      uz: ["Katta krovat", "Smart TV 4K", "Mini-bar", "Ajoyib ko'rinish", "Nonushta kiritilgan", "Tursbor kiritilgan"],
+      ru: ["Большая кровать", "Smart TV 4K", "Мини-бар", "Красивый вид", "Завтрак включен", "Туристический сбор включен"],
+      en: ["King bed", "Smart TV 4K", "Mini-bar", "Great view", "Breakfast included", "Tourism fee included"]
+    },
+    telegramLink: "https://t.me/AsrPlazaHotel_bot?text=Assalomu%20alaykum!%20Men%20Deluxe%20xonasini%20bron%20qilmoqchiman:%0A%0A🏨%20Xona:%20Deluxe%0A👥%20Mehmonlar%20soni:%20[Kishi%20soni]%0A📅%20Kelish%20sanasi:%20[Sanani%20kiriting]%0A📞%20Telefon:[Raqamingiz]"
   },
   {
     id: "triple",
-    name: { uz: "Triple toifasi", ru: "Номер Triple (3-местный)", en: "Triple Room" },
-    total: { uz: "2 ta xona", ru: "2 номера", en: "2 rooms" },
+    name: { uz: "Triple toifasi", ru: "Категория Трайпл", en: "Triple Category" },
     img: "images/hotel/triple.jpg",
+    total: { uz: "3 kishilik", ru: "Трехместный", en: "Triple" },
+    types: { uz: "Narxi: 1 200 000 so'm", ru: "Цена: 1 200 000 сум", en: "Price: 1,200,000 UZS" },
     features: {
-      uz: ["3 kishilik joy", "Bepul Wi-Fi", "Smart TV", "Konditsioner", "Shved stoli nonushta"],
-      ru: ["Размещение на 3 чел.", "Wi-Fi", "Smart TV", "Кондиционер", "Завтрак"],
-      en: ["3 guests capacity", "Wi-Fi", "Smart TV", "AC", "Buffet breakfast"]
-    }
+      uz: ["3 ta o'rin", "Smart TV", "Mini-bar", "Keng xona", "Nonushta kiritilgan", "Tursbor kiritilgan"],
+      ru: ["3 места", "Smart TV", "Мини-бар", "Просторный номер", "Завтрак включен", "Туристический сбор включен"],
+      en: ["3 beds", "Smart TV", "Mini-bar", "Spacious room", "Breakfast included", "Tourism fee included"]
+    },
+    telegramLink: "https://t.me/AsrPlazaHotel_bot?text=Assalomu%20alaykum!%20Men%20Triple%20xonasini%20bron%20qilmoqchiman:%0A%0A🏨%20Xona:%20Triple%0A👥%20Mehmonlar%20soni:%20[Kishi%20soni]%0A📅%20Kelish%20sanasi:%20[Sanani%20kiriting]%0A📞%20Telefon:[Raqamingiz]"
   },
   {
     id: "luxury",
-    name: { uz: "Lyuks toifasi", ru: "Категория Luxury", en: "Luxury Category" },
-    total: { uz: "3 ta xona", ru: "3 номера", en: "3 rooms" },
+    name: { uz: "Luxury toifasi", ru: "Категория Люкс", en: "Luxury Category" },
     img: "images/hotel/luxury.jpg",
+    total: { uz: "VIP Sharoit", ru: "VIP Условия", en: "VIP Conditions" },
+    types: { uz: "Narxi: 1 800 000 so'm", ru: "Цена: 1 800 000 сум", en: "Price: 1,800,000 UZS" },
     features: {
-      uz: ["Eksklyuziv interyer", "King Size yotoq", "Mini-bar", "Konditsioner", "Shved stoli nonushta"],
-      ru: ["Эксклюзивный интерьер", "Кровать King Size", "Мини-бар", "Кондиционер", "Завтрак"],
-      en: ["Exclusive interior", "King Size bed", "Mini-bar", "AC", "Buffet breakfast"]
-    }
+      uz: ["Premium dizayn", "Jacuzzi", "VIP xizmat", "Maxsus ko'rinish", "Nonushta kiritilgan", "Tursbor kiritilgan"],
+      ru: ["Премиум дизайн", "Джакузи", "VIP сервис", "Особый вид", "Завтрак включен", "Туристический сбор включен"],
+      en: ["Premium design", "Jacuzzi", "VIP service", "Special view", "Breakfast included", "Tourism fee included"]
+    },
+    telegramLink: "https://t.me/AsrPlazaHotel_bot?text=Assalomu%20alaykum!%20Men%20Luxury%20xonasini%20bron%20qilmoqchiman:%0A%0A🏨%20Xona:%20Luxury%0A👥%20Mehmonlar%20soni:%20[Kishi%20soni]%0A📅%20Kelish%20sanasi:%20[Sanani%20kiriting]%0A📞%20Telefon:[Raqamingiz]"
   }
 ];
+
+// 2. Mehmonxona Qoidalari va Ma'lumotlari (HOTEL_RULES)
 window.HOTEL_RULES = {
   uz: [
-    { title: "Nonushta (Shved stoli)", desc: "Xona narxiga kiritilgan! Har kuni soat 07:00 dan 10:00 gacha." },
+    {
+      title: "Turistik yig'im (Tursbor)",
+      desc: "Xona narxiga to'liq kiritilgan! Qo'shimcha yashirin to'lovlar mavjud emas."
+    },
+    {
+      title: "Check-in / Check-out",
+      desc: "Kirish vaqti (Check-in): 14:00 dan boshlab. Chiqish vaqti (Check-out): 12:00 gacha."
+    },
+    {
+      title: "Erta kirish / Kech chiqish",
+      desc: "06:00 dan 14:00 gacha erta kirish yoki kech chiqish uchun qo'shimcha xizmat haqi mavjud."
+    },
+    {
+      title: "Bron va oldindan to'lov",
+      desc: "5 xonagacha bo'lgan bronlar uchun oldindan to'lov talab etilmaydi (shartlar o'zgarishi mumkin)."
+    },
+    {
+      title: "Chekish taqiqlanadi!",
+      desc: "Barcha xonalar va yopiq maydonlarda chekish qat'iyan man etiladi."
+    },
+    {
+      title: "Nonushta (Shved stoli)",
+      desc: "Har kuni yuqori darajadagi shved stoli ko'rinishida taqdim etiladi.",
+      timeBadge: "Har kuni: 07:00 ⏳ 10:00",
+      images: [
+        { src: "images/hotel/breakfast1.jpg" },
+        { src: "images/hotel/breakfast2.jpg" }
+      ]
+    }
+  ],
+  ru: [
+    {
+      title: "Завтрак (Шведский стол)",
+      desc: "Включен в стоимость проживания!",
+      timeBadge: "Ежедневно: 07:00 ⏳ 10:00",
+      images: [
+        { src: "images/hotel/breakfast1.jpg" },
+        { src: "images/hotel/breakfast2.jpg" }
+      ]
+    },
+    {
+      title: "Туристический сбор",
+      desc: "Включен в стоимость! Никаких скрытых платежей."
+    },
+    {
+      title: "Check-in / Check-out",
+      desc: "Время заезда: с 14:00. Время выезда: до 12:00."
+    },
+    {
+      title: "Ранний заезд / Поздний выезд",
+      desc: "До 06:00 или после 12:00 действуют специальные тарифы."
+    },
+    {
+      title: "Бронь и предоплата",
+      desc: "До 5 номеров бронируется без обязательной предоплаты."
+    },
+    {
+      title: "Курение запрещено!",
+      desc: "Курение в номерах строго запрещено."
+    }
+  ],
+  en: [
+    {
+      title: "Tourism Fee",
+      desc: "Fully included in the room rate! No hidden charges."
+    },
+    {
+      title: "Check-in / Check-out",
+      desc: "Check-in: from 14:00. Check-out: until 12:00."
+    },
+    {
+      title: "Early Arrival / Late Departure",
+      desc: "Available upon request with applicable terms."
+    },
+    {
+      title: "Booking Policy",
+      desc: "No prepayment up to 5 rooms under standard policy."
+    },
+    {
+      title: "No Smoking!",
+      desc: "Smoking is strictly prohibited inside the rooms."
+    },
+    {
+      title: "Breakfast (Buffet)",
+      desc: "Included in room rate every morning!",
+      timeBadge: "Daily: 07:00 ⏳ 10:00",
+      images: [
+        { src: "images/hotel/breakfast1.jpg" },
+        { src: "images/hotel/breakfast2.jpg" }
+      ]
+    }
+  ]
+};
+
+// 3. Basseyn ma'lumotlari (Misol uchun saqlangan)
+window.POOL_DATA = {
+  priceBase: "300 000",
+  extraPerson: "50 000",
+  contacts: {
+    phone: "551527070",
+    phoneDisplay: "+998 55 152-70-70",
+    telegram: "https://t.me/AsrPlazaHotel_bot"
+  }
+};
+window.HOTEL_RULES = {
+  uz: [
+    { 
+      title: "Nonushta (Shved stoli)", 
+      desc: "Xona narxiga kiritilgan!",
+      timeBadge: "Har kuni: 07:00 – 10:00",
+      images: [
+        { src: "images/hotel/breakfast1.jpg" },
+        { src: "images/hotel/breakfast2.jpg" }
+      ]
+    },
     { title: "Turistik yig'im (Tursbor)", desc: "Xona tarifiga to'liq kiritilgan, ortiqcha to'lov yo'q." },
     { title: "Check-in / Check-out", desc: "Kirish vaqti: 14:00 | Chiqish vaqti: 12:00." },
     { title: "Erta kirish / Kech chiqish", desc: "06:00 gacha: 100% (nonushta bilan) · 06:00-12:00: 50% · 12:00-18:00 kech chiqishda har bir soatga 10% to'lov." },
@@ -261,7 +391,15 @@ window.HOTEL_RULES = {
     { title: "Chekish taqiqlanadi!", desc: "Barcha xonalarda chekish qat'iyan taqiqlangan. Jarima miqdori: 500 000 so'm." }
   ],
   ru: [
-    { title: "Завтрак (Шведский стол)", desc: "Включен в стоимость! Ежедневно с 07:00 до 10:00." },
+    { 
+      title: "Завтрак (Шведский стол)", 
+      desc: "Включен в стоимость!",
+      timeBadge: "Ежедневно: 07:00 – 10:00",
+      images: [
+        { src: "images/hotel/breakfast1.jpg" },
+        { src: "images/hotel/breakfast2.jpg" }
+      ]
+    },
     { title: "Туристический сбор", desc: "Включен в стоимость проживания." },
     { title: "Check-in / Check-out", desc: "Время заезда: 14:00 | Время выезда: 12:00." },
     { title: "Ранний заезд / Поздний выезд", desc: "До 06:00: 100% (с завтраком) · 06:00-12:00: 50% · 12:00-18:00: 10% в час." },
@@ -269,7 +407,15 @@ window.HOTEL_RULES = {
     { title: "Курение запрещено!", desc: "Курение в номерах строго запрещено. Штраф: 500 000 сум." }
   ],
   en: [
-    { title: "Breakfast (Buffet)", desc: "Included in room rate! Daily from 07:00 to 10:00." },
+    { 
+      title: "Breakfast (Buffet)", 
+      desc: "Included in room rate!",
+      timeBadge: "Daily: 07:00 – 10:00",
+      images: [
+        { src: "images/hotel/breakfast1.jpg" },
+        { src: "images/hotel/breakfast2.jpg" }
+      ]
+    },
     { title: "Tourism Fee", desc: "Fully included in the room rate." },
     { title: "Check-in / Check-out", desc: "Check-in: 14:00 | Check-out: 12:00." },
     { title: "Early Arrival / Late Departure", desc: "Before 06:00: 100% · 06:00-12:00: 50% · 12:00-18:00: 10% per hour." },
@@ -277,7 +423,6 @@ window.HOTEL_RULES = {
     { title: "No Smoking!", desc: "Smoking is strictly prohibited in all rooms. Fine: 500,000 UZS." }
   ]
 };
-
 window.POOL_DATA = {
   priceBase: "900 000",
   extraPerson: "150 000",
@@ -288,3 +433,11 @@ window.POOL_DATA = {
     instagram: "https://instagram.com/asrplazahotel"
   }
 };
+/* ===== HOTEL UMUMIY GALEREYASI (Fasad, Lobby, Nonushta va Zonalar) ===== */
+window.HOTEL_GALLERY = [
+  { img: "images/hotel/exterior.jpg", title: { uz: "Mehmonxona fasadi", ru: "Фасад отеля", en: "Hotel Exterior" }, type: "main" },
+  { img: "images/hotel/lobby.jpg", title: { uz: "Qabulxona va Lobby", ru: "Зона ресепшн", en: "Reception Lobby" }, type: "tall" },
+  { img: "images/hotel/breakfast.jpg", title: { uz: "Nonushta zali", ru: "Зал завтраков", en: "Breakfast Hall" }, type: "wide" },
+  { img: "images/hotel/lounge.jpg", title: { uz: "Dam olish zali", ru: "Зона отдыха", en: "Lounge Area" }, type: "vertical" },
+  { img: "images/hotel/corridor.jpg", title: { uz: "Mehmonxona koridori", ru: "Коридор отеля", en: "Hotel Corridor" }, type: "wide" }
+];

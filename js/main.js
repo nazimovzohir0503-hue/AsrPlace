@@ -94,18 +94,28 @@
     }
   }
 
-  /* ===== MEHMONXONA VA BASSEYN RENDERI ===== */
+ /* ===== MEHMONXONA VA BASSEYN RENDERI (Filtr va Badge'lar bilan) ===== */
+  var currentRoomFilter = "all";
+
   function renderHotelAndPool() {
     var hGrid = $("hotelGrid"), hInfo = $("hotelInfo"), pGrid = $("poolGrid");
 
-    if (hGrid && window.HOTEL_ROOMS) {
-      hGrid.innerHTML = window.HOTEL_ROOMS.map(function(r) {
+   if (hGrid && window.HOTEL_ROOMS) {
+      var filteredRooms = window.HOTEL_ROOMS.filter(function(r) {
+        if (currentRoomFilter === "all") return true;
+        return r.id === currentRoomFilter;
+      });
+
+      hGrid.innerHTML = filteredRooms.map(function(r) {
         var featHtml = (r.features && r.features[lang]) ? r.features[lang].map(function(f) {
           return '<li><span>✓</span> ' + f + '</li>';
         }).join("") : "";
 
-        var contacts = window.POOL_DATA ? window.POOL_DATA.contacts : { phone: "551527070", telegram: "https://t.me/asrplaza_hotel" };
+        var contacts = window.POOL_DATA ? window.POOL_DATA.contacts : { phone: "551527070" };
         var priceDetail = r.dynamicPrices ? r.dynamicPrices : (r.types ? r.types[lang] : "");
+        
+        // Bu yerda data.js dagi r.telegramLink dan foydalanilyapti
+        var tgLink = r.telegramLink ? r.telegramLink : "https://t.me/AsrPlazaHotel_bot";
 
         return '<div class="fac-card">' +
           '<div class="fac-img-wrap">' +
@@ -119,7 +129,7 @@
               '<span class="fac-price" style="font-size: 1.05rem; line-height: 1.4; font-weight: 700; color: #b89753;">' + priceDetail + '</span>' +
               '<div class="fac-actions">' +
                 '<a href="tel:' + contacts.phone + '" class="btn btn-gold">' + t("hotel_call") + '</a>' +
-                '<a href="' + contacts.telegram + '" target="_blank" rel="noopener" class="btn btn-out">' + t("hotel_book_tg") + '</a>' +
+                '<a href="' + tgLink + '" target="_blank" rel="noopener" class="btn btn-out">' + t("hotel_book_tg") + '</a>' +
               '</div>' +
             '</div>' +
           '</div>' +
@@ -127,11 +137,34 @@
       }).join("");
     }
 
+    // Qoidalar va nonushta rasmlari qismi
     if (hInfo && window.HOTEL_RULES && window.HOTEL_RULES[lang]) {
-      hInfo.innerHTML = window.HOTEL_RULES[lang].map(function(rule) {
-        return '<div class="rule-card">' +
+      hInfo.innerHTML = window.HOTEL_RULES[lang].map(function(rule, idx) {
+        var timeBadgeHtml = "";
+        if (rule.timeBadge) {
+          timeBadgeHtml = '<div style="display: inline-flex; align-items: center; gap: 6px; background: rgba(201, 162, 104, 0.15); color: var(--gold, #b89753); border: 1px solid rgba(201, 162, 104, 0.4); padding: 0.3rem 0.8rem; border-radius: 999px; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.8rem;">' +
+            '⏰ ' + rule.timeBadge +
+          '</div>';
+        }
+
+        var imagesHtml = "";
+        if (rule.images && rule.images.length > 0) {
+          imagesHtml = '<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px;">' +
+            rule.images.map(function(imgObj, imgIdx) {
+              return '<div style="position: relative; height: 200px; border-radius: 12px; overflow: hidden; background: #111; cursor: zoom-in;" class="zoomable-img" data-index="' + (5 + imgIdx) + '">' +
+                '<img src="' + imgObj.src + '" alt="Nonushta" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease;">' +
+                '<div style="position: absolute; top: 10px; right: 10px; background: rgba(16, 19, 28, 0.75); color: #fff; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); border: 1px solid rgba(201, 162, 104, 0.4); font-size: 0.95rem;">🔍</div>' +
+              '</div>';
+            }).join("") +
+          '</div>';
+        }
+        
+        var cardStyle = (idx === 0) ? ' style="grid-column: 1 / -1;"' : '';
+        return '<div class="rule-card"' + cardStyle + '>' +
           '<h4>' + rule.title + '</h4>' +
           '<p>' + rule.desc + '</p>' +
+          timeBadgeHtml +
+          imagesHtml +
         '</div>';
       }).join("");
     }
@@ -162,7 +195,17 @@
     }
   }
 
-  /* ===== RESTORAN MENYUSI ===== */
+  // Filtr tugmalari bosilganda ishlash mantig'i
+  document.addEventListener("click", function(e) {
+    var filterBtn = e.target.closest("[data-filter]");
+    if (filterBtn) {
+      document.querySelectorAll("[data-filter]").forEach(function(b) { b.classList.remove("active"); });
+      filterBtn.classList.add("active");
+      currentRoomFilter = filterBtn.dataset.filter;
+      renderHotelAndPool();
+    }
+  });
+    /* ===== RESTORAN MENYUSI ===== */
   function renderMenu() {
     var ul = $("dishes"), tb = $("tabs");
     if (!ul || !M) return;
@@ -312,38 +355,37 @@
         console.error("Narxlarni yuklashda xatolik:", err);
       });
   }
-/* ===== SCROLL ANIMATSIYASI (QALQIB CHIQISH) ===== */
+
+ render();
+  fetchLivePrices();
+
+  /* ===== BASSEYN VA BOSHQA RASMLAR UCHUN SCROLL ANIMATSIYASI (QALQIB CHIQISH) ===== */
   var bentoItems = document.querySelectorAll(".bento-item");
   if (bentoItems.length > 0 && "IntersectionObserver" in window) {
-    
-    // Boshlang'ich holatda rasmlarga yashirinish klasini qo'shish
     bentoItems.forEach(function(item) { 
       item.classList.add("reveal-item"); 
     });
 
-    // Ekranga kirganini kuzatuvchi "Ko'z" (Observer)
     var scrollObserver = new IntersectionObserver(function(entries, observer) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
-          // Rasm ekranda ko'ringanda uni jonlantirish
           entry.target.classList.add("active");
-          observer.unobserve(entry.target); // Bir marta ishlasin, qayta-qayta emas
+          observer.unobserve(entry.target);
         }
       });
     }, { 
-      rootMargin: "0px 0px -50px 0px", // Mijoz rasmga 50px yaqinlashganda ishga tushadi
+      rootMargin: "0px 0px -50px 0px", 
       threshold: 0.1 
     });
 
-    // Barcha rasmlarni kuzatishga topshirish
     bentoItems.forEach(function(item) { 
       scrollObserver.observe(item); 
     });
   }
-  /* ===== LIGHTBOX (Rasmlarni to'liq ekranda ochish mantig'i) ===== */
+
+  /* ===== LIGHTBOX (Basseyn va boshqa rasmlarni to'liq ekranda ochish) ===== */
   var lb = $("lightbox"), lbImg = $("lightbox-img");
   if (lb && lbImg) {
-    // Rasmlarni bosganda ochish
     document.querySelectorAll(".bento-item").forEach(function(item) {
       item.addEventListener("click", function() {
         var img = this.querySelector("img");
@@ -353,17 +395,18 @@
         }
       });
     });
-    // X tugmasi bosilganda yopish
-    document.querySelector(".lightbox-close").addEventListener("click", function() {
-      lb.style.display = "none";
-    });
-    // Qora fon bosilganda ham yopish
+    
+    var closeBtn = document.querySelector(".lightbox-close");
+    if (closeBtn) {
+      closeBtn.addEventListener("click", function() {
+        lb.style.display = "none";
+      });
+    }
+
     lb.addEventListener("click", function(e) {
       if (e.target !== lbImg) lb.style.display = "none";
     });
   }
-  render();
-  fetchLivePrices();
 
   /* ===== TEPAGA QAYTISH MANTIG'I ===== */
   var topBtn = $("scrollTopBtn");

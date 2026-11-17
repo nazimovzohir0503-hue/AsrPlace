@@ -798,3 +798,118 @@ form .btn,.note{grid-column:1/-1}
 .bento-item:nth-child(3).reveal-item { transition-delay: 0.3s; }
 .bento-item:nth-child(4).reveal-item { transition-delay: 0.4s; }
 .bento-item:nth-child(5).reveal-item { transition-delay: 0.5s; }
+/* ===== BASSEYN BLOKI: IXCHAM VA SHAFFAF GLASSMORPHISM DIZAYNI ===== */
+
+/* Basseyn bo'limining asosiy qutisi (Orqadagi video to'liq ko'rinishi uchun) */
+.pool-hero-box {
+  background: rgba(16, 19, 28, 0.22) !important; /* Fon shaffofligi yanada kamaytirildi (video ochiq ko'rinadi) */
+  backdrop-filter: blur(10px);                  /* Shishani xiralashtirish effekti */
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15) !important; /* Yupqa nafis tilla/oq ramka */
+  border-radius: 20px;
+  padding: 2.2rem 1.5rem;                        /* Ichki bo'shliqlar ixchamlashtirildi */
+  color: #ffffff;
+  max-width: 580px;                              /* Karta eni biroz toraytirilib, minimalist qilindi */
+  margin: 2rem auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);   /* Chuqur va yengil soya */
+}
+
+/* Yuqori kichik badge (Yopiq basseyn) */
+.pool-rate-badge {
+  display: inline-block;
+  background: rgba(201, 162, 104, 0.2);
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  font-weight: 700;
+  font-size: 0.78rem;
+  padding: 0.25rem 0.8rem;
+  border-radius: 999px;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Sarlavha (Ixchamroq va nafis) */
+.pool-hero-box h3 {
+  font-size: 1.8rem !important;
+  margin-bottom: 0.8rem;
+  letter-spacing: -0.01em;
+}
+
+/* Narx qatori */
+.pool-price-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.pool-price-row .big-sum {
+  font-size: 2.4rem !important; /* Haddan tashqari katta bo'lmaydigan, chiroyli o'lcham */
+  font-weight: 800;
+  color: var(--gold);
+  font-family: var(--head);
+}
+
+.pool-price-row .unit {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+/* Qo'shimcha kishi narxi matni */
+.pool-extra-info {
+  font-size: 0.95rem;
+  color: var(--sand);
+  margin-bottom: 1.4rem;
+  opacity: 0.9;
+}
+
+/* Qulayliklar ro'yxati (Minimalist va toza) */
+.pool-perks {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 1.6rem;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  text-align: left;
+}
+
+.pool-perks li {
+  font-size: 0.92rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0.95;
+}
+
+.pool-perks li span {
+  color: var(--gold);
+  font-weight: 800;
+}
+
+/* Aloqa tugmalari */
+.pool-contacts {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pool-contacts .btn {
+  padding: 0.7rem 1.4rem;
+  font-size: 0.92rem;
+  background: rgba(212, 175, 55, 0.15) !important;
+  border: 1px solid var(--gold) !important;
+  color: var(--gold) !important;
+  transition: all 0.3s ease;
+}
+
+.pool-contacts .btn:hover {
+  background: var(--gold) !important;
+  color: #111 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+}
