@@ -35,9 +35,10 @@
   var bar = document.createElement("nav");
   bar.className = "mbar"; bar.setAttribute("aria-label", "Quick actions");
   var tel = String(S.phone || "").replace(/\D/g, "");
+  var hotelBotLink = "https://t.me/AsrPlazaHotel_bot?text=Assalomu%20alaykum!%20Men%20xona%20band%20qilmoqchiman.";
   bar.innerHTML =
     '<a href="tel:+' + tel + '" data-track="bar_call">' + ICON.call + '<span data-k="bar_call"></span></a>' +
-    '<a class="mb-main" href="#book" data-track="bar_book">' + ICON.book + '<span data-k="bar_book"></span></a>' +
+    '<a class="mb-main" href="' + hotelBotLink + '" target="_blank" rel="noopener" data-track="bar_book">' + ICON.book + '<span data-k="bar_book"></span></a>' +
     '<a href="#delivery" data-track="bar_delivery">' + ICON.delivery + '<span data-k="bar_delivery"></span></a>';
   document.body.appendChild(bar);
 
