@@ -223,7 +223,7 @@ window.HOTEL_ROOMS = [
       ru: ["Бесплатный Wi-Fi", "Smart TV", "Мини-бар", "Кондиционер", "Завтрак шведский стол", "Туристический сбор включен"],
       en: ["Free Wi-Fi", "Smart TV", "Mini-bar", "Air conditioning", "Buffet breakfast", "Tourism fee included"]
     },
-    telegramLink: "https://t.me/AsrPlazaHotel_bot?text=Assalomu%20alaykum!%20Men%20Standard%20xonasini%20bron%20qilmoqchiman:%0A%0A🏨%20Xona:%20Standard%0A👥%20Mehmonlar%20soni:%20[Kishi%20soni]%0A📅%20Kelish%20sanasi:%20[Sanani%20kiriting]%0A📞%20Telefon:[Raqamingiz]"
+    telegramLink: "https://t.me/AsrPlazaHotel_bot?text=Assalomu%20alaykum!%20Men%20Standard%20xonasini%20bron%20qilmoqchiman:%0A%0A🏨%20Xona:%20Standard%0A👥%20Mehmonlar%20soni:%20%0A📅%20Kelish%20sanasi:%20%0A📞%20Telefon:%20"
   },
   {
     id: "deluxe",
@@ -236,7 +236,7 @@ window.HOTEL_ROOMS = [
       ru: ["Большая кровать", "Smart TV 4K", "Мини-бар", "Красивый вид", "Завтрак включен", "Туристический сбор включен"],
       en: ["King bed", "Smart TV 4K", "Mini-bar", "Great view", "Breakfast included", "Tourism fee included"]
     },
-    telegramLink: "https://t.me/AsrPlazaHotel_bot?text=Assalomu%20alaykum!%20Men%20Deluxe%20xonasini%20bron%20qilmoqchiman:%0A%0A🏨%20Xona:%20Deluxe%0A👥%20Mehmonlar%20soni:%20[Kishi%20soni]%0A📅%20Kelish%20sanasi:%20[Sanani%20kiriting]%0A📞%20Telefon:[Raqamingiz]"
+    telegramLink: "https://t.me/AsrPlazaHotel_bot?text=Assalomu%20alaykum!%20Men%20Deluxe%20xonasini%20bron%20qilmoqchiman:%0A%0A🏨%20Xona:%20Deluxe%0A👥%20Mehmonlar%20soni:%20%0A📅%20Kelish%20sanasi:%20%0A📞%20Telefon:%20"
   },
   {
     id: "triple",
@@ -249,7 +249,7 @@ window.HOTEL_ROOMS = [
       ru: ["3 места", "Smart TV", "Мини-бар", "Просторный номер", "Завтрак включен", "Туристический сбор включен"],
       en: ["3 beds", "Smart TV", "Mini-bar", "Spacious room", "Breakfast included", "Tourism fee included"]
     },
-    telegramLink: "https://t.me/AsrPlazaHotel_bot?text=Assalomu%20alaykum!%20Men%20Triple%20xonasini%20bron%20qilmoqchiman:%0A%0A🏨%20Xona:%20Triple%0A👥%20Mehmonlar%20soni:%20[Kishi%20soni]%0A📅%20Kelish%20sanasi:%20[Sanani%20kiriting]%0A📞%20Telefon:[Raqamingiz]"
+    telegramLink: "https://t.me/AsrPlazaHotel_bot?text=Assalomu%20alaykum!%20Men%20Triple%20xonasini%20bron%20qilmoqchiman:%0A%0A🏨%20Xona:%20Triple%0A👥%20Mehmonlar%20soni:%20%0A📅%20Kelish%20sanasi:%20%0A📞%20Telefon:%20"
   },
   {
     id: "luxury",
@@ -262,7 +262,7 @@ window.HOTEL_ROOMS = [
       ru: ["Премиум дизайн", "Джакузи", "VIP сервис", "Особый вид", "Завтрак включен", "Туристический сбор включен"],
       en: ["Premium design", "Jacuzzi", "VIP service", "Special view", "Breakfast included", "Tourism fee included"]
     },
-    telegramLink: "https://t.me/AsrPlazaHotel_bot?text=Assalomu%20alaykum!%20Men%20Luxury%20xonasini%20bron%20qilmoqchiman:%0A%0A🏨%20Xona:%20Luxury%0A👥%20Mehmonlar%20soni:%20[Kishi%20soni]%0A📅%20Kelish%20sanasi:%20[Sanani%20kiriting]%0A📞%20Telefon:[Raqamingiz]"
+    telegramLink: "https://t.me/AsrPlazaHotel_bot?text=Assalomu%20alaykum!%20Men%20Luxury%20xonasini%20bron%20qilmoqchiman:%0A%0A🏨%20Xona:%20Luxury%0A👥%20Mehmonlar%20soni:%20%0A📅%20Kelish%20sanasi:%20%0A📞%20Telefon:%20"
   }
 ];
 
