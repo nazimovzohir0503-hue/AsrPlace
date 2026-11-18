@@ -27,7 +27,7 @@ window.SITE = {
 window.I18N = {
   uz: {
     nav_home: "Bosh sahifa",
-    nav_about: "Biz haqimizda", nav_menu: "Menyu", nav_visit: "Manzil", book: "Stol band qilish",
+    nav_about: "Restoran", nav_menu: "Menyu", nav_visit: "Manzil", book: "Stol band qilish",
     nav_hotel: "Mehmonxona", nav_pool: "Basseyn",
     nav_delivery: "Yetkazib berish",
     hotel_t: "ASR Plaza Hotel",
@@ -76,7 +76,7 @@ window.I18N = {
   },
   ru: {
     nav_home: "Главная",
-    nav_about: "О нас", nav_menu: "Меню", nav_visit: "Адрес", book: "Забронировать стол",
+    nav_about: "Ресторан", nav_menu: "Меню", nav_visit: "Адрес", book: "Забронировать стол",
     nav_hotel: "Отель", nav_pool: "Бассейн",
     nav_delivery: "Доставка",
     hotel_t: "Отель ASR Plaza",
@@ -125,7 +125,7 @@ window.I18N = {
   },
   en: {
     nav_home: "Home",
-    nav_about: "About", nav_menu: "Menu", nav_visit: "Visit", book: "Book a table",
+    nav_about: "Restaurant", nav_menu: "Menu", nav_visit: "Visit", book: "Book a table",
     nav_hotel: "Hotel", nav_pool: "Pool",
     nav_delivery: "Delivery",
     hotel_t: "ASR Plaza Hotel",
