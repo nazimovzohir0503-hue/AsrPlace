@@ -365,12 +365,13 @@ window.HOTEL_RULES = {
 
 // 3. Basseyn ma'lumotlari (Misol uchun saqlangan)
 window.POOL_DATA = {
-  priceBase: "300 000",
-  extraPerson: "50 000",
+  priceBase: "900 000",
+  extraPerson: "150 000",
   contacts: {
     phone: "551527070",
-    phoneDisplay: "+998 55 152-70-70",
-    telegram: "https://t.me/AsrPlazaHotel_bot"
+    phoneDisplay: "+998 55 152 70 70",
+    telegram: "https://t.me/AsrPlazaHotel_bot?text=Assalomu%20alaykum!%20Men%20basseynni%20bron%20qilmoqchiman.%0A%0A👥%20Mehmonlar%20soni:%20%0A📅%20Kelish%20sanasi%20va%20vaqti:%20%0A⏱️%20Davomiyligi%20(necha%20soat):%20%0A📞%20Telefon:%20",
+    instagram: "https://instagram.com/asrplazahotel"
   }
 };
 window.HOTEL_RULES = {
@@ -429,7 +430,7 @@ window.POOL_DATA = {
   contacts: {
     phone: "551527070",
     phoneDisplay: "+998 55 152 70 70",
-    telegram: "https://t.me/asrplaza_hotel",
+    telegram: "https://t.me/AsrPlazaHotel_bot?text=Assalomu%20alaykum!%20Men%20basseynni%20bron%20qilmoqchiman.%0A%0A👥%20Mehmonlar%20soni:%20%0A📅%20Kelish%20sanasi%20va%20vaqti:%20%0A⏱️%20Davomiyligi%20(necha%20soat):%20%0A📞%20Telefon:%20",
     instagram: "https://instagram.com/asrplazahotel"
   }
 };
